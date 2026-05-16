@@ -68,9 +68,9 @@ const T = {
     foot_currencies_label: 'Settlement, regulation permitting',
     rooms_hint: '← swipe to see all six →',
     story_h2: 'Built in Saigon, <em>with love.</em>',
-    story_p1: 'Centrente is a Trancent venture. Trancent is Vietnamese in heart, French in operation — a group founded by Tei Tran, born in Saigon, raised between Hanoi and Lille. The name is a portmanteau of centre — because the centre of a city, the centre of a country, the centre of an idea is where this house intends to live.',
+    story_p1: 'Centrente is a Trancent venture. Trancent is a Vietnamese-French group whose work moves between Saigon, Hanoi, Paris, and Lille. The name is a portmanteau of centre — because the centre of a city, the centre of a country, the centre of an idea is where this house intends to live.',
     story_p2: 'We chose Saigon for the reasons everyone who has lived here knows. The food at three in the morning. The hours kept differently. The opening of an alleyway at six. The smell of the river after rain. The unembarrassed warmth of people who do not need to be asked twice. Vietnam taught a generation of us how to live; Centrente is, in part, how we begin to say it back.',
-    story_p3: 'The house is built by Vietnamese architects, French designers, Italian craftspeople, a chef from coastal France, and a team of Vietnamese hospitality professionals trained in the great houses of Asia and Europe. The hospitality will be Vietnamese — the precision French. The wines European, the cuisine French, the view Saigon\'s, the service uncompromising. Behind every detail, the same intention: that a stay here feels like being looked after by people who actually like that you came.',
+    story_p3: 'The house is built by Trancent. The hospitality will be Vietnamese, the precision French. The wines European, the cuisine French, the view Saigon\'s, the service uncompromising. Behind every detail, the same intention: that a stay here feels like being looked after by people who actually like that you came.',
     story_p4: 'We owe Vietnam a great deal. Centrente is how we say thank you.'
   },
   fr: {
@@ -107,9 +107,9 @@ const T = {
     foot_currencies_label: 'Règlement, selon la réglementation',
     rooms_hint: '← glissez pour voir les six →',
     story_h2: 'Construite à Saïgon, <em>avec amour.</em>',
-    story_p1: 'Centrente est une aventure Trancent. Trancent est vietnamien de cœur, français d\'opération — un groupe fondé par Tei Tran, né à Saïgon, élevé entre Hanoï et Lille. Le nom est un mot-valise du mot centre — parce que le centre d\'une ville, le centre d\'un pays, le centre d\'une idée, voilà où cette maison entend vivre.',
+    story_p1: 'Centrente est une aventure Trancent. Trancent est un groupe franco-vietnamien dont l\'activité se déploie entre Saïgon, Hanoï, Paris et Lille. Le nom est un mot-valise du mot centre — parce que le centre d\'une ville, le centre d\'un pays, le centre d\'une idée, voilà où cette maison entend vivre.',
     story_p2: 'Nous avons choisi Saïgon pour les raisons que tous ceux qui y ont vécu connaissent. La cuisine à trois heures du matin. Les heures que l\'on tient autrement. L\'ouverture d\'une ruelle à six heures. L\'odeur de la rivière après la pluie. La chaleur sans pudeur de gens qui n\'ont pas besoin qu\'on leur demande deux fois. Le Viêt Nam a appris à toute une génération d\'entre nous comment vivre ; Centrente est, en partie, la manière dont nous commençons à le lui rendre.',
-    story_p3: 'La maison est construite par des architectes vietnamiens, des designers français, des artisans italiens, un chef de la côte française, et une équipe de professionnels de l\'hospitalité vietnamiens formés dans les grandes maisons d\'Asie et d\'Europe. L\'hospitalité sera vietnamienne — la précision française. Les vins européens, la cuisine française, la vue saïgonnaise, le service sans compromis. Derrière chaque détail, la même intention : qu\'un séjour ici donne le sentiment d\'être pris en charge par des gens qui sont sincèrement heureux que vous soyez venu.',
+    story_p3: 'La maison est construite par Trancent. L\'hospitalité sera vietnamienne, la précision française. Les vins européens, la cuisine française, la vue saïgonnaise, le service sans compromis. Derrière chaque détail, la même intention : qu\'un séjour ici donne le sentiment d\'être pris en charge par des gens qui sont sincèrement heureux que vous soyez venu.',
     story_p4: 'Nous devons beaucoup au Viêt Nam. Centrente est notre façon de dire merci.'
   },
   vi: {
@@ -146,9 +146,9 @@ const T = {
     foot_currencies_label: 'Thanh toán, tuỳ theo quy định',
     rooms_hint: '← lướt để xem cả sáu →',
     story_h2: 'Được xây tại Sài Gòn, <em>với tình yêu.</em>',
-    story_p1: 'Centrente là một dự án của Trancent. Trancent mang trái tim Việt Nam, vận hành theo phong cách Pháp — một tập đoàn được sáng lập bởi Tei Tran, sinh ra tại Sài Gòn, lớn lên giữa Hà Nội và Lille. Cái tên là sự kết hợp từ centre — bởi trung tâm của một thành phố, trung tâm của một đất nước, trung tâm của một ý tưởng chính là nơi mà ngôi nhà này muốn tồn tại.',
+    story_p1: 'Centrente là một dự án của Trancent. Trancent là một tập đoàn Việt-Pháp với hoạt động trải dài giữa Sài Gòn, Hà Nội, Paris và Lille. Cái tên là sự kết hợp từ centre — bởi trung tâm của một thành phố, trung tâm của một đất nước, trung tâm của một ý tưởng chính là nơi mà ngôi nhà này muốn tồn tại.',
     story_p2: 'Chúng tôi chọn Sài Gòn vì những lý do mà bất cứ ai đã từng sống ở đây đều biết. Bữa ăn lúc ba giờ sáng. Những giờ giấc được giữ theo cách khác. Một con hẻm mở ra lúc sáu giờ. Mùi sông sau cơn mưa. Sự ấm áp không e ngại của những con người không cần được hỏi đến lần thứ hai. Việt Nam đã dạy cả một thế hệ chúng tôi cách sống; Centrente là một phần cách chúng tôi bắt đầu đáp lại.',
-    story_p3: 'Ngôi nhà được xây dựng bởi các kiến trúc sư Việt Nam, các nhà thiết kế Pháp, các nghệ nhân Ý, một đầu bếp từ miền duyên hải nước Pháp, và một đội ngũ chuyên gia hiếu khách Việt Nam được đào tạo tại những ngôi nhà lớn ở châu Á và châu Âu. Sự hiếu khách sẽ mang chất Việt — sự chính xác mang chất Pháp. Rượu vang châu Âu, ẩm thực Pháp, tầm nhìn của Sài Gòn, sự phục vụ không thoả hiệp. Đằng sau từng chi tiết, cùng một ý định: để một lần lưu trú ở đây mang cảm giác được chăm sóc bởi những người thực sự vui vì bạn đến.',
+    story_p3: 'Ngôi nhà được xây dựng bởi Trancent. Sự hiếu khách sẽ mang chất Việt, sự chính xác mang chất Pháp. Rượu vang châu Âu, ẩm thực Pháp, tầm nhìn của Sài Gòn, sự phục vụ không thoả hiệp. Đằng sau từng chi tiết, cùng một ý định: để một lần lưu trú ở đây mang cảm giác được chăm sóc bởi những người thực sự vui vì bạn đến.',
     story_p4: 'Chúng tôi nợ Việt Nam rất nhiều. Centrente là cách chúng tôi nói lời cảm ơn.'
   }
 };

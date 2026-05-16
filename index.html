@@ -455,6 +455,154 @@
     .foot-cols { grid-template-columns: 1fr 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
   }
+
+  /* ─── mobile ─── */
+  .nav-toggle {
+    display: none;
+    width: 30px; height: 22px;
+    position: relative; cursor: pointer;
+    background: none; border: none; padding: 0;
+  }
+  .nav-toggle span {
+    display: block; position: absolute; left: 0; right: 0;
+    height: 1px; background: var(--ivory);
+    transition: transform .4s ease, opacity .3s ease, top .4s ease;
+  }
+  .nav-toggle span:nth-child(1) { top: 4px; }
+  .nav-toggle span:nth-child(2) { top: 11px; }
+  .nav-toggle span:nth-child(3) { top: 18px; }
+  .nav-toggle.open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+
+  .nav-mobile {
+    position: fixed; inset: 0; z-index: 40;
+    background: rgba(10,8,7,0.97); backdrop-filter: blur(14px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 28px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .5s ease;
+  }
+  .nav-mobile.open { opacity: 1; pointer-events: auto; }
+  .nav-mobile a {
+    font-family: var(--serif); font-style: italic; font-size: 28px;
+    color: var(--ivory-70); transition: color .3s;
+  }
+  .nav-mobile a:hover { color: var(--ivory); }
+  .nav-mobile .lang {
+    margin-top: 32px; font-size: 12px; letter-spacing: .3em;
+  }
+
+  @media (max-width: 768px) {
+    .nav { padding: 16px 24px; }
+    .nav-links, .nav-right .lang, .nav-right .cta { display: none; }
+    .nav-toggle { display: block; }
+    .mono { font-size: 16px; letter-spacing: .22em; }
+
+    section { padding: 90px 22px; }
+
+    .hero-inner { padding: 120px 22px 80px; }
+    .hero-mark { margin-bottom: 36px; transform: scale(0.85); }
+    .hero h1 {
+      font-size: clamp(44px, 13vw, 78px);
+      line-height: 1.05; max-width: none;
+    }
+    .hero-eyebrow { font-size: 15px; margin-bottom: 28px; }
+    .hero-meta { gap: 22px; margin-top: 48px; }
+    .hero-meta .caps { font-size: 10px; letter-spacing: .22em; }
+
+    .anchor { margin-bottom: 56px; }
+    .anchor .seal { font-size: 88px; }
+    .anchor .seal small { font-size: 10px; margin-top: 18px; }
+    .anchor .head { margin-top: 40px; }
+    .anchor .head h2 { font-size: clamp(30px, 8vw, 52px); }
+    .anchor .head p { font-size: 15px; line-height: 1.7; }
+
+    .stats { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 56px; }
+    .stat .v { font-size: 32px; }
+    .stat .l { font-size: 9px; }
+
+    .elevation { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .elevation svg { min-width: 560px; }
+
+    .rooms-rail { grid-template-columns: 1fr; gap: 32px; margin-top: 56px; }
+    .room { padding-top: 24px; }
+    .room .tier-only { font-size: 44px; min-height: 52px; }
+    .room .tier-only small { font-size: 13px; }
+    .room .num-row { min-height: 52px; }
+    .room .num-row .n { font-size: 48px; }
+    .room .num-row .t { font-size: 11px; }
+    .room .room-plan { max-width: 320px; margin-left: auto; margin-right: auto; }
+
+    .club { padding: 60px 24px; gap: 36px; }
+    .club .spine { font-size: clamp(110px, 32vw, 200px); }
+    .club .body h3 { font-size: 36px; }
+    .club .body p { font-size: 15px; }
+
+    .stay-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 56px; max-width: 360px; }
+
+    .club-card { max-width: 360px; }
+    .club-benefits { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; }
+    .benefit .copy { font-size: 16px; }
+
+    .le13-diagram, .le21-diagram, .belvedere-diagram { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .le13-diagram svg, .le21-diagram svg, .belvedere-diagram svg { min-width: 420px; }
+
+    .chef-bio, .cellar-bio { margin-top: 56px; padding-top: 32px; }
+    .chef-bio .name, .cellar-bio .name { font-size: 32px; margin-bottom: 22px; }
+    .chef-bio .story, .cellar-bio .story { font-size: 16px; line-height: 1.7; }
+    .chef-bio .origin, .cellar-bio .origin { font-size: 10px; letter-spacing: .22em; }
+
+    .palette-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 44px; }
+    .sw { padding: 12px; }
+    .sw .nm { font-size: 14px; }
+    .sw .hex { font-size: 9px; }
+
+    .type-spec { grid-template-columns: 1fr; gap: 44px; margin-top: 44px; }
+    .ts-card.serif .sample { font-size: 56px; }
+    .ts-card.sans .sample { font-size: 17px; }
+
+    footer { padding: 70px 24px 36px; }
+    .foot-mark { font-size: 24px; }
+    .foot-tag { font-size: 14px; }
+    .foot-cols { grid-template-columns: 1fr; gap: 32px; margin-top: 48px; text-align: center; }
+    .foot-currencies { font-size: 12px; margin-top: 32px; }
+    .foot-currencies .sep { margin: 0 6px; }
+    .foot-base {
+      flex-direction: column; align-items: center; gap: 20px;
+      padding-top: 28px; margin-top: 44px;
+      font-size: 10px; letter-spacing: .2em;
+      text-align: center;
+    }
+
+    .map { aspect-ratio: 4/3; }
+
+    .map svg, .le13-diagram svg, .le21-diagram svg, .belvedere-diagram svg, .elevation svg {
+      max-width: none;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .hero h1 { font-size: clamp(38px, 12vw, 64px); }
+    .anchor .seal { font-size: 72px; }
+    .anchor .head h2 { font-size: clamp(26px, 7vw, 42px); }
+    .club .spine { font-size: clamp(96px, 30vw, 170px); }
+  }
+
+  /* ─── i18n ─── */
+  [data-i18n], [data-i18n-html] { transition: opacity .3s; }
+  .lang-toggle { display: inline-flex; gap: 0; align-items: center; }
+  .lang-toggle .opt {
+    cursor: pointer; padding: 0 4px;
+    color: var(--ivory-50);
+    transition: color .3s;
+    background: none; border: none;
+    font: inherit;
+    letter-spacing: inherit;
+  }
+  .lang-toggle .opt.on { color: var(--ivory); }
+  .lang-toggle .opt:hover { color: var(--ivory); }
+  .lang-toggle .div { color: var(--ivory-30); padding: 0 2px; }
 </style>
 </head>
 <body>
@@ -462,19 +610,36 @@
 <nav class="nav" id="nav">
   <a href="#" class="mono">CENTRENTE</a>
   <div class="nav-links">
-    <a href="#vision">Vision</a>
-    <a href="#rooms">Rooms</a>
-    <a href="#stay">The Stay</a>
+    <a href="#vision" data-i18n="nav_vision">Vision</a>
+    <a href="#rooms" data-i18n="nav_rooms">Rooms</a>
+    <a href="#stay" data-i18n="nav_stay">The Stay</a>
     <a href="#le13">Le 13</a>
     <a href="#le21">Le Comptoir</a>
     <a href="#belvedere">Le Belvédère</a>
-    <a href="#club">130 Club</a>
+    <a href="#club" data-i18n="nav_club">130 Club</a>
   </div>
   <div class="nav-right">
-    <div class="lang"><span class="on">EN</span> &nbsp; FR &nbsp; VI</div>
-    <a class="cta" href="#reserve">Reservations</a>
+    <div class="lang lang-toggle">
+      <button class="opt on" data-lang="en">EN</button><span class="div">·</span><button class="opt" data-lang="fr">FR</button><span class="div">·</span><button class="opt" data-lang="vi">VI</button>
+    </div>
+    <a class="cta" href="#reserve" data-i18n="nav_cta">Reservations</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#vision" data-i18n="nav_vision">Vision</a>
+  <a href="#rooms" data-i18n="nav_rooms">Rooms</a>
+  <a href="#stay" data-i18n="nav_stay">The Stay</a>
+  <a href="#le13">Le 13</a>
+  <a href="#le21">Le Comptoir</a>
+  <a href="#belvedere">Le Belvédère</a>
+  <a href="#club" data-i18n="nav_club">130 Club</a>
+  <div class="lang lang-toggle" style="margin-top:32px;">
+    <button class="opt on" data-lang="en">EN</button><span class="div">·</span><button class="opt" data-lang="fr">FR</button><span class="div">·</span><button class="opt" data-lang="vi">VI</button>
+  </div>
+  <a href="#reserve" class="cta" data-i18n="nav_cta" style="margin-top:8px;">Reservations</a>
+</div>
 
 <section class="hero" id="vision">
   <div class="hero-inner">
@@ -498,11 +663,11 @@
       <line x1="0" y1="88" x2="44" y2="88" stroke-width="1"/>
     </svg>
 
-    <div class="hero-eyebrow">A Trancent venture, in conception.</div>
-    <h1>The next <em>130 metres</em><br/>of Saigon.</h1>
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">A Trancent venture, in conception.</div>
+    <h1 data-i18n-html="hero_h1">The next <em>130 metres</em><br/>of Saigon.</h1>
     <div class="hero-meta">
       <div class="rule center"></div>
-      <div class="caps">
+      <div class="caps" data-i18n-html="hero_meta">
         Breaking ground March 2033<br/>
         Đồng Khởi · District 1 · Hồ Chí Minh City
       </div>
@@ -513,10 +678,10 @@
 
 <section id="district">
   <div class="anchor">
-    <div class="seal">130<small>The District</small></div>
+    <div class="seal">130<small data-i18n="district_caption">The District</small></div>
     <div class="head">
-      <h2>Anchored in <em>the center.</em></h2>
-      <p>Set in the architectural spine of District 1, CENTRENTE rises above the Saigon River within a short walk of Notre-Dame, Đồng Khởi, and the Independence Palace. The building, the views, and the rhythm of the city share one address.</p>
+      <h2 data-i18n-html="district_h2">Anchored in <em>the center.</em></h2>
+      <p data-i18n="district_p">Set in the architectural spine of District 1, CENTRENTE rises above the Saigon River within a short walk of Notre-Dame, Đồng Khởi, and the Independence Palace. The building, the views, and the rhythm of the city share one address.</p>
     </div>
   </div>
   <div class="district-grid">
@@ -700,10 +865,10 @@
 
 <section id="rooms">
   <div class="anchor">
-    <div class="seal">130<small>The Rooms</small></div>
+    <div class="seal">130<small data-i18n="rooms_caption">The Rooms</small></div>
     <div class="head">
-      <h2>Six rooms. <em>Two 130s.</em></h2>
-      <p>The house rises thirty-one floors above Đồng Khởi — one hundred and thirty metres of building. Four standard tiers below — Guest, Deluxe, Premium Deluxe, Studio — and two elevated 130s: a 130 Executive among the high floors, and the 130 Pavilions — two duplex residences at the summit, each across two floors.</p>
+      <h2 data-i18n-html="rooms_h2">Six rooms. <em>Two 130s.</em></h2>
+      <p data-i18n="rooms_p">The house rises thirty-one floors above Đồng Khởi — one hundred and thirty metres of building. Four standard tiers below — Guest, Deluxe, Premium Deluxe, Studio — and two elevated 130s: a 130 Executive among the high floors, and the 130 Pavilions — two duplex residences at the summit, each across two floors.</p>
     </div>
   </div>
 
@@ -1198,10 +1363,10 @@
 
 <section id="stay">
   <div class="anchor">
-    <div class="seal">130<small>The Stay</small></div>
+    <div class="seal">130<small data-i18n="stay_caption">The Stay</small></div>
     <div class="head">
-      <h2>A house that asks <em>for less of you.</em></h2>
-      <p>Arrival in our electric fleet. Mobile unlock at the door. A single panel beside the bed for light, climate, sound, curtain, blackout. Behind every gesture, an energy programme designed to leave Saigon quieter than we found it.</p>
+      <h2 data-i18n-html="stay_h2">A house that asks <em>for less of you.</em></h2>
+      <p data-i18n="stay_p">Arrival in our electric fleet. Mobile unlock at the door. A single panel beside the bed for light, climate, sound, curtain, blackout. Behind every gesture, an energy programme designed to leave Saigon quieter than we found it.</p>
     </div>
   </div>
   <div class="stay-grid">
@@ -1269,10 +1434,10 @@
 
 <section id="le13">
   <div class="anchor">
-    <div class="seal">Le 13<small>The Casino</small></div>
+    <div class="seal">Le 13<small data-i18n="le13_caption">The Casino</small></div>
     <div class="head">
-      <h2>A casino <em>on the thirteenth floor.</em></h2>
-      <p>A private casino in the European tradition of the cercle — set on floor 13 of the house, by introduction, by reservation, by membership. Open after dusk, kept by the concierge.</p>
+      <h2 data-i18n-html="le13_h2">A casino <em>on the thirteenth floor.</em></h2>
+      <p data-i18n="le13_p">A private casino in the European tradition of the cercle — set on floor 13 of the house, by introduction, by reservation, by membership. Open after dusk, kept by the concierge.</p>
     </div>
   </div>
   <div class="le13-diagram">
@@ -1334,17 +1499,17 @@
       <text x="230" y="316" font-family="Cormorant Garamond" font-style="italic" fill="#ECECEFCC" font-size="13" text-anchor="middle">A casino on the thirteenth floor — between the city and the sky.</text>
     </svg>
   </div>
-  <div class="le13-footnote">
+  <div class="le13-footnote" data-i18n="le13_footnote">
     Gaming operations subject to Vietnamese licensing — opening contingent on regulatory approval.
   </div>
 </section>
 
 <section id="le21">
   <div class="anchor">
-    <div class="seal">Le Comptoir<small>21st floor · The Restaurant</small></div>
+    <div class="seal">Le Comptoir<small data-i18n="le21_caption">21st floor · The Restaurant</small></div>
     <div class="head">
-      <h2>Le Comptoir, <em>a French table at altitude.</em></h2>
-      <p>Le 21 is our restaurant — French in lineage, Michelin-track from the start, intimate by design. An open kitchen, a deep European cellar, forty-six covers and no more. The kitchen, by Théo Bruyniard.</p>
+      <h2 data-i18n-html="le21_h2">Le Comptoir, <em>a French table at altitude.</em></h2>
+      <p data-i18n="le21_p">Le 21 is our restaurant — French in lineage, Michelin-track from the start, intimate by design. An open kitchen, a deep European cellar, forty-six covers and no more. The kitchen, by Théo Bruyniard.</p>
     </div>
   </div>
 
@@ -1458,10 +1623,10 @@
 
 <section id="belvedere">
   <div class="anchor">
-    <div class="seal">Le Belvédère<small>The Rooftop · Sky Bar · Infinity Pool</small></div>
+    <div class="seal">Le Belvédère<small data-i18n="belv_caption">The Rooftop · Sky Bar · Infinity Pool</small></div>
     <div class="head">
-      <h2>An infinity pool <em>above the city.</em></h2>
-      <p>Le Belvédère sits above floor 31 — the open roof of the house. An infinity pool that meets the Saigon skyline, a long sky bar, eight cabanas, an open table for late dinners. Private access from the 130 Pavilion; reservations open to guests of the house from dusk.</p>
+      <h2 data-i18n-html="belv_h2">An infinity pool <em>above the city.</em></h2>
+      <p data-i18n="belv_p">Le Belvédère sits above floor 31 — the open roof of the house. An infinity pool that meets the Saigon skyline, a long sky bar, eight cabanas, an open table for late dinners. Private access from the 130 Pavilion; reservations open to guests of the house from dusk.</p>
     </div>
   </div>
 
@@ -1542,17 +1707,17 @@
     </svg>
   </div>
 
-  <div class="belvedere-footnote">
+  <div class="belvedere-footnote" data-i18n="belv_footnote">
     Open from dusk to late, weather permitting. Reservations open to guests of the house.
   </div>
 </section>
 
 <section id="club">
   <div class="anchor">
-    <div class="seal">130<small>The Club</small></div>
+    <div class="seal">130<small data-i18n="club_caption">The Club</small></div>
     <div class="head">
-      <h2>A house <em>that remembers.</em></h2>
-      <p>130 Club is our quiet recognition of returning guests — a loyalty programme without points, without tiers. Membership is extended at the discretion of the concierge after the first stay; with it, the house anticipates rather than asks.</p>
+      <h2 data-i18n-html="club_h2">A house <em>that remembers.</em></h2>
+      <p data-i18n="club_p">130 Club is our quiet recognition of returning guests — a loyalty programme without points, without tiers. Membership is extended at the discretion of the concierge after the first stay; with it, the house anticipates rather than asks.</p>
     </div>
   </div>
 
@@ -1595,7 +1760,7 @@
     </div>
   </div>
 
-  <a href="#reserve" class="club-cta">By invitation only</a>
+  <a href="#reserve" class="club-cta" data-i18n="club_cta">By invitation only</a>
 </section>
 
 <section id="palette" style="padding-top: 80px;">
@@ -1642,7 +1807,7 @@
 
 <footer>
   <div class="foot-mark">CENTRENTE</div>
-  <p class="foot-tag">Breaking ground March 2033. Đồng Khởi, District 1, Hồ Chí Minh City. Updates rare and considered.</p>
+  <p class="foot-tag" data-i18n="foot_tag">Breaking ground March 2033. Đồng Khởi, District 1, Hồ Chí Minh City. Updates rare and considered.</p>
   <div class="foot-cols">
     <div>
       <h4>The House</h4>
@@ -1658,12 +1823,12 @@
     </div>
   </div>
   <div class="foot-currencies">
-    Settlement, regulation permitting<span class="sep">·</span>Fiat<span class="sep">·</span><span class="zec">Zcash (ZEC)</span>
+    <span data-i18n="foot_currencies_label">Settlement, regulation permitting</span><span class="sep">·</span>Fiat<span class="sep">·</span><span class="zec">Zcash (ZEC)</span>
   </div>
   <div class="foot-base">
     <div>© 2026 Centrente · All rights reserved</div>
     <a href="https://trancent.io" class="trancent">
-      <span class="label">A venture by</span>
+      <span class="label" data-i18n="venture_by">A venture by</span>
       <img src="trancent-logo-horizontal-white.png" alt="Trancent" />
     </a>
   </div>
@@ -1671,6 +1836,7 @@
 
 
 <script>
+  // ─── header: scroll-hide + scrolled bg ───
   const nav = document.getElementById('nav');
   let lastY = 0;
   let ticking = false;
@@ -1679,18 +1845,165 @@
       requestAnimationFrame(() => {
         const y = scrollY;
         nav.classList.toggle('scrolled', y > 80);
-        // hide on scroll down past the hero, show on scroll up
-        if (y > 240 && y > lastY + 4) {
-          nav.classList.add('hidden');
-        } else if (y < lastY - 4 || y < 80) {
-          nav.classList.remove('hidden');
-        }
+        if (y > 240 && y > lastY + 4) nav.classList.add('hidden');
+        else if (y < lastY - 4 || y < 80) nav.classList.remove('hidden');
         lastY = y;
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
+
+  // ─── mobile menu ───
+  const navToggle = document.getElementById('nav-toggle');
+  const navMobile = document.getElementById('nav-mobile');
+  navToggle?.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navMobile.classList.toggle('open');
+    document.body.style.overflow = navMobile.classList.contains('open') ? 'hidden' : '';
+  });
+  navMobile?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navMobile.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // ─── i18n ───
+  const T = {
+    en: {
+      nav_vision: 'Vision', nav_rooms: 'Rooms', nav_stay: 'The Stay', nav_club: '130 Club', nav_cta: 'Reservations',
+      hero_eyebrow: 'A Trancent venture, in conception.',
+      hero_h1: 'The next <em>130 metres</em><br/>of Saigon.',
+      hero_meta: 'Breaking ground March 2033<br/>Đồng Khởi · District 1 · Hồ Chí Minh City',
+      district_caption: 'The District',
+      district_h2: 'Anchored in <em>the center.</em>',
+      district_p: 'Set in the architectural spine of District 1, CENTRENTE rises above the Saigon River within a short walk of Notre-Dame, Đồng Khởi, and the Independence Palace. The building, the views, and the rhythm of the city share one address.',
+      rooms_caption: 'The Rooms',
+      rooms_h2: 'Six rooms. <em>Two 130s.</em>',
+      rooms_p: 'The house rises thirty-one floors above Đồng Khởi — one hundred and thirty metres of building. Four standard tiers below — Guest, Deluxe, Premium Deluxe, Studio — and two elevated 130s: a 130 Executive among the high floors, and the 130 Pavilions — two duplex residences at the summit, each across two floors.',
+      stay_caption: 'The Stay',
+      stay_h2: 'A house that asks <em>for less of you.</em>',
+      stay_p: 'Arrival in our electric fleet. Mobile unlock at the door. A single panel beside the bed for light, climate, sound, curtain, blackout. Behind every gesture, an energy programme designed to leave Saigon quieter than we found it.',
+      le13_caption: 'The Casino',
+      le13_h2: 'A casino <em>on the thirteenth floor.</em>',
+      le13_p: 'A private casino in the European tradition of the cercle — set on floor 13 of the house, by introduction, by reservation, by membership. Open after dusk, kept by the concierge.',
+      le13_footnote: 'Gaming operations subject to Vietnamese licensing — opening contingent on regulatory approval.',
+      le21_caption: '21st floor · The Restaurant',
+      le21_h2: 'Le Comptoir, <em>a French table at altitude.</em>',
+      le21_p: 'Le 21 is our restaurant — French in lineage, Michelin-track from the start, intimate by design. An open kitchen, a deep European cellar, forty-six covers and no more. The kitchen, by Théo Bruyniard.',
+      belv_caption: 'The Rooftop · Sky Bar · Infinity Pool',
+      belv_h2: 'An infinity pool <em>above the city.</em>',
+      belv_p: 'Le Belvédère sits above floor 31 — the open roof of the house. An infinity pool that meets the Saigon skyline, a long sky bar, eight cabanas, an open table for late dinners. Private access from the 130 Pavilion; reservations open to guests of the house from dusk.',
+      belv_footnote: 'Open from dusk to late, weather permitting. Reservations open to guests of the house.',
+      club_caption: 'The Club',
+      club_h2: 'A house <em>that remembers.</em>',
+      club_p: '130 Club is our quiet recognition of returning guests — a loyalty programme without points, without tiers. Membership is extended at the discretion of the concierge after the first stay; with it, the house anticipates rather than asks.',
+      club_cta: 'By invitation only',
+      foot_tag: 'Breaking ground March 2033. Đồng Khởi, District 1, Hồ Chí Minh City. Updates rare and considered.',
+      venture_by: 'A venture by',
+      foot_currencies_label: 'Settlement, regulation permitting'
+    },
+    fr: {
+      nav_vision: 'Vision', nav_rooms: 'Chambres', nav_stay: 'Le Séjour', nav_club: '130 Club', nav_cta: 'Réservations',
+      hero_eyebrow: 'Une aventure Trancent, en conception.',
+      hero_h1: 'Les prochains <em>130 mètres</em><br/>de Saïgon.',
+      hero_meta: 'Premier coup de pioche mars 2033<br/>Đồng Khởi · District 1 · Hồ Chí Minh-Ville',
+      district_caption: 'Le Quartier',
+      district_h2: 'Ancrée au <em>centre.</em>',
+      district_p: 'Implantée sur l\'épine architecturale du District 1, CENTRENTE s\'élève au-dessus de la rivière de Saïgon, à quelques pas de Notre-Dame, de Đồng Khởi et du Palais de la Réunification. Le bâtiment, les vues et le rythme de la ville partagent une seule adresse.',
+      rooms_caption: 'Les Chambres',
+      rooms_h2: 'Six chambres. <em>Deux 130.</em>',
+      rooms_p: 'La maison s\'élève sur trente-et-un étages au-dessus de Đồng Khởi — cent trente mètres de bâtiment. Quatre catégories en bas — Guest, Deluxe, Premium Deluxe, Studio — et deux 130 d\'exception : un 130 Executive sur chaque étage haut, et les 130 Pavilions — deux résidences duplex au sommet, chacune sur deux étages.',
+      stay_caption: 'Le Séjour',
+      stay_h2: 'Une maison qui demande <em>moins de vous.</em>',
+      stay_p: 'Arrivée dans notre flotte électrique. Ouverture par mobile à la porte. Un seul panneau au chevet du lit pour la lumière, le climat, le son, les rideaux, l\'occultation. Derrière chaque geste, un programme énergétique pensé pour laisser Saïgon plus silencieuse que nous l\'avons trouvée.',
+      le13_caption: 'Le Casino',
+      le13_h2: 'Un casino <em>au treizième étage.</em>',
+      le13_p: 'Un casino privé dans la tradition européenne du cercle — installé au treizième étage de la maison, sur introduction, sur réservation, sur adhésion. Ouvert dès le crépuscule, tenu par le concierge.',
+      le13_footnote: 'Opérations de jeu soumises à licence vietnamienne — ouverture subordonnée à l\'approbation réglementaire.',
+      le21_caption: '21ᵉ étage · Le Restaurant',
+      le21_h2: 'Le Comptoir, <em>une table française en altitude.</em>',
+      le21_p: 'Le 21 est notre restaurant — français de lignée, sur la trace d\'une étoile Michelin dès l\'ouverture, intime par dessein. Une cuisine ouverte, une cave européenne profonde, quarante-six couverts et pas un de plus. La cuisine, par Théo Bruyniard.',
+      belv_caption: 'Le Toit · Sky Bar · Piscine à débordement',
+      belv_h2: 'Une piscine à débordement <em>au-dessus de la ville.</em>',
+      belv_p: 'Le Belvédère se trouve au-dessus du 31ᵉ étage — le toit ouvert de la maison. Une piscine à débordement qui rencontre l\'horizon de Saïgon, un long sky bar, huit cabanas, une table ouverte pour les dîners tardifs. Accès privé depuis le 130 Pavilion ; réservations ouvertes aux clients de la maison dès le crépuscule.',
+      belv_footnote: 'Ouvert du crépuscule à tard, selon la météo. Réservations ouvertes aux clients de la maison.',
+      club_caption: 'Le Club',
+      club_h2: 'Une maison <em>qui se souvient.</em>',
+      club_p: '130 Club est notre reconnaissance silencieuse des clients fidèles — un programme de fidélité sans points, sans paliers. L\'adhésion est offerte à la discrétion du concierge après le premier séjour ; avec elle, la maison anticipe plutôt qu\'elle ne demande.',
+      club_cta: 'Sur invitation uniquement',
+      foot_tag: 'Premier coup de pioche mars 2033. Đồng Khởi, District 1, Hồ Chí Minh-Ville. Nouvelles rares et choisies.',
+      venture_by: 'Une aventure de',
+      foot_currencies_label: 'Règlement, selon la réglementation'
+    },
+    vi: {
+      nav_vision: 'Tầm nhìn', nav_rooms: 'Phòng', nav_stay: 'Lưu trú', nav_club: '130 Club', nav_cta: 'Đặt phòng',
+      hero_eyebrow: 'Một dự án Trancent, đang hình thành.',
+      hero_h1: '<em>130 mét</em> tiếp theo<br/>của Sài Gòn.',
+      hero_meta: 'Khởi công tháng 3 năm 2033<br/>Đồng Khởi · Quận 1 · Thành phố Hồ Chí Minh',
+      district_caption: 'Khu phố',
+      district_h2: 'Tọa lạc tại <em>trung tâm.</em>',
+      district_p: 'Nằm trên trục kiến trúc của Quận 1, CENTRENTE vươn cao bên trên sông Sài Gòn, chỉ vài bước chân đến Nhà thờ Đức Bà, Đồng Khởi và Dinh Độc Lập. Toà nhà, tầm nhìn và nhịp sống của thành phố cùng chia sẻ một địa chỉ.',
+      rooms_caption: 'Các Phòng',
+      rooms_h2: 'Sáu phòng. <em>Hai phòng 130.</em>',
+      rooms_p: 'Toà nhà cao ba mươi mốt tầng trên Đồng Khởi — một trăm ba mươi mét chiều cao. Bốn hạng tiêu chuẩn ở dưới — Guest, Deluxe, Premium Deluxe, Studio — và hai phòng 130 đặc biệt: một 130 Executive trên mỗi tầng cao, và các 130 Pavilion — hai dinh thự duplex ở đỉnh, mỗi phòng trải dài hai tầng.',
+      stay_caption: 'Lưu trú',
+      stay_h2: 'Một ngôi nhà <em>đòi hỏi ít hơn ở bạn.</em>',
+      stay_p: 'Đón tiếp bằng đoàn xe điện riêng. Mở cửa bằng điện thoại. Một bảng điều khiển duy nhất cạnh giường cho ánh sáng, nhiệt độ, âm thanh, rèm, chắn sáng. Đằng sau từng cử chỉ, một chương trình năng lượng được thiết kế để Sài Gòn yên tĩnh hơn so với khi chúng tôi đến.',
+      le13_caption: 'Casino',
+      le13_h2: 'Một casino <em>tại tầng mười ba.</em>',
+      le13_p: 'Một casino riêng tư theo truyền thống cercle châu Âu — đặt tại tầng 13 của toà nhà, theo lời giới thiệu, theo đặt trước, theo thành viên. Mở cửa sau hoàng hôn, do concierge phụ trách.',
+      le13_footnote: 'Hoạt động cờ bạc tuân theo giấy phép Việt Nam — việc mở cửa phụ thuộc vào phê duyệt của cơ quan quản lý.',
+      le21_caption: 'Tầng 21 · Nhà hàng',
+      le21_h2: 'Le Comptoir, <em>một bàn ăn Pháp trên cao.</em>',
+      le21_p: 'Le 21 là nhà hàng của chúng tôi — Pháp về dòng dõi, hướng đến sao Michelin ngay từ đầu, ấm cúng có chủ ý. Một căn bếp mở, một hầm rượu châu Âu sâu, bốn mươi sáu chỗ ngồi và không hơn. Căn bếp, do Théo Bruyniard điều hành.',
+      belv_caption: 'Sân Thượng · Sky Bar · Hồ Bơi Vô Cực',
+      belv_h2: 'Một hồ bơi vô cực <em>bên trên thành phố.</em>',
+      belv_p: 'Le Belvédère nằm trên tầng 31 — mái nhà mở của ngôi nhà. Một hồ bơi vô cực gặp đường chân trời Sài Gòn, một sky bar dài, tám cabana, một bàn ăn mở cho những bữa tối muộn. Lối vào riêng từ 130 Pavilion; đặt chỗ mở cho khách của ngôi nhà từ hoàng hôn.',
+      belv_footnote: 'Mở cửa từ hoàng hôn đến khuya, tuỳ thời tiết. Đặt chỗ mở cho khách của ngôi nhà.',
+      club_caption: 'Câu Lạc Bộ',
+      club_h2: 'Một ngôi nhà <em>biết nhớ.</em>',
+      club_p: '130 Club là sự ghi nhận thầm lặng của chúng tôi dành cho những vị khách quay trở lại — một chương trình thân thiết không điểm thưởng, không cấp bậc. Tư cách thành viên được trao theo quyết định của concierge sau lần lưu trú đầu tiên; với nó, ngôi nhà đoán biết trước thay vì hỏi.',
+      club_cta: 'Chỉ theo lời mời',
+      foot_tag: 'Khởi công tháng 3 năm 2033. Đồng Khởi, Quận 1, Thành phố Hồ Chí Minh. Tin tức hiếm và được chọn lọc.',
+      venture_by: 'Một dự án của',
+      foot_currencies_label: 'Thanh toán, tuỳ theo quy định'
+    }
+  };
+
+  function detectLang() {
+    const saved = localStorage.getItem('centrente.lang');
+    if (saved && T[saved]) return saved;
+    const b = (navigator.language || 'en').toLowerCase();
+    if (b.startsWith('vi')) return 'vi';
+    if (b.startsWith('fr')) return 'fr';
+    return 'en';
+  }
+
+  function applyLang(lang) {
+    if (!T[lang]) lang = 'en';
+    document.documentElement.lang = lang;
+    document.body.dataset.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      if (T[lang][k]) el.textContent = T[lang][k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const k = el.dataset.i18nHtml;
+      if (T[lang][k]) el.innerHTML = T[lang][k];
+    });
+    document.querySelectorAll('.lang-toggle .opt').forEach(opt => {
+      opt.classList.toggle('on', opt.dataset.lang === lang);
+    });
+    localStorage.setItem('centrente.lang', lang);
+  }
+
+  applyLang(detectLang());
+  document.querySelectorAll('.lang-toggle .opt').forEach(opt => {
+    opt.addEventListener('click', () => applyLang(opt.dataset.lang));
+  });
 </script>
 
 </body>

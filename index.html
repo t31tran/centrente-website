@@ -525,21 +525,56 @@
     .elevation { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .elevation svg { min-width: 560px; }
 
-    .rooms-rail { grid-template-columns: 1fr; gap: 32px; margin-top: 56px; }
-    .room { padding-top: 24px; }
-    .room .tier-only { font-size: 44px; min-height: 52px; }
-    .room .tier-only small { font-size: 13px; }
-    .room .num-row { min-height: 52px; }
-    .room .num-row .n { font-size: 48px; }
+    /* rooms — horizontal swipe carousel on mobile */
+    .rooms-rail {
+      display: flex;
+      grid-template-columns: none;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      padding: 8px 22px 12px;
+      margin: 56px -22px 0;
+      scrollbar-width: none;
+    }
+    .rooms-rail::-webkit-scrollbar { display: none; }
+    .rooms-rail::after { content: ''; flex: 0 0 6px; }
+    .room {
+      flex: 0 0 80%;
+      min-width: 80%;
+      scroll-snap-align: center;
+      padding-top: 24px;
+    }
+    .room .tier-only { font-size: 42px; min-height: 50px; }
+    .room .tier-only small { font-size: 12px; }
+    .room .num-row { min-height: 50px; gap: 10px; }
+    .room .num-row .n { font-size: 46px; }
     .room .num-row .t { font-size: 11px; }
-    .room .room-plan { max-width: 320px; margin-left: auto; margin-right: auto; }
+    .room .room-plan { max-width: 100%; }
+    .rooms-hint {
+      display: block; text-align: center;
+      font-family: var(--serif); font-style: italic;
+      font-size: 13px; color: var(--ivory-50);
+      margin-top: 22px; letter-spacing: 0.04em;
+    }
 
     .club { padding: 60px 24px; gap: 36px; }
     .club .spine { font-size: clamp(110px, 32vw, 200px); }
     .club .body h3 { font-size: 36px; }
     .club .body p { font-size: 15px; }
 
-    .stay-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 56px; max-width: 360px; }
+    /* stay — 2x2 compact grid on mobile */
+    .stay-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 14px;
+      margin-top: 48px;
+      max-width: none;
+    }
+    .stay-item { padding-top: 22px; }
+    .stay-icon { height: 52px; margin-bottom: 14px; }
+    .stay-icon svg { width: 46px; height: 46px; }
+    .stay-item .label { font-size: 14px; margin-bottom: 8px; }
+    .stay-item .copy { font-size: 12px; line-height: 1.55; max-width: 100%; }
 
     .club-card { max-width: 360px; }
     .club-benefits { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; }
@@ -588,6 +623,9 @@
     .anchor .head h2 { font-size: clamp(26px, 7vw, 42px); }
     .club .spine { font-size: clamp(96px, 30vw, 170px); }
   }
+
+  /* swipe hint — mobile only */
+  .rooms-hint { display: none; }
 
   /* ─── i18n ─── */
   [data-i18n], [data-i18n-html] { transition: opacity .3s; }
@@ -1359,6 +1397,7 @@
       <div class="copy">Two duplex pavilions at the summit. Each across two floors — master suite, library, living, dining. Private stair and lift.</div>
     </div>
   </div>
+  <div class="rooms-hint" data-i18n="rooms_hint">← swipe to see all six →</div>
 </section>
 
 <section id="stay">
@@ -1903,7 +1942,8 @@
       club_cta: 'By invitation only',
       foot_tag: 'Breaking ground March 2033. Đồng Khởi, District 1, Hồ Chí Minh City. Updates rare and considered.',
       venture_by: 'A venture by',
-      foot_currencies_label: 'Settlement, regulation permitting'
+      foot_currencies_label: 'Settlement, regulation permitting',
+      rooms_hint: '← swipe to see all six →'
     },
     fr: {
       nav_vision: 'Vision', nav_rooms: 'Chambres', nav_stay: 'Le Séjour', nav_club: '130 Club', nav_cta: 'Réservations',
@@ -1936,7 +1976,8 @@
       club_cta: 'Sur invitation uniquement',
       foot_tag: 'Premier coup de pioche mars 2033. Đồng Khởi, District 1, Hồ Chí Minh-Ville. Nouvelles rares et choisies.',
       venture_by: 'Une aventure de',
-      foot_currencies_label: 'Règlement, selon la réglementation'
+      foot_currencies_label: 'Règlement, selon la réglementation',
+      rooms_hint: '← glissez pour voir les six →'
     },
     vi: {
       nav_vision: 'Tầm nhìn', nav_rooms: 'Phòng', nav_stay: 'Lưu trú', nav_club: '130 Club', nav_cta: 'Đặt phòng',
@@ -1969,7 +2010,8 @@
       club_cta: 'Chỉ theo lời mời',
       foot_tag: 'Khởi công tháng 3 năm 2033. Đồng Khởi, Quận 1, Thành phố Hồ Chí Minh. Tin tức hiếm và được chọn lọc.',
       venture_by: 'Một dự án của',
-      foot_currencies_label: 'Thanh toán, tuỳ theo quy định'
+      foot_currencies_label: 'Thanh toán, tuỳ theo quy định',
+      rooms_hint: '← lướt để xem cả sáu →'
     }
   };
 

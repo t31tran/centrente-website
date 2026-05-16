@@ -602,10 +602,10 @@ footer {
   .chef-bio .story, .cellar-bio .story { font-size: 16px; line-height: 1.7; }
   .chef-bio .origin, .cellar-bio .origin { font-size: 10px; letter-spacing: .22em; }
 
-  .palette-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 44px; }
-  .sw { padding: 12px; }
-  .sw .nm { font-size: 14px; }
-  .sw .hex { font-size: 9px; }
+  .palette-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 36px; }
+  .sw { padding: 8px; }
+  .sw .nm { font-size: 11px; }
+  .sw .hex { font-size: 8px; letter-spacing: .08em; margin-top: 2px; }
 
   .type-spec { grid-template-columns: 1fr; gap: 44px; margin-top: 44px; }
   .ts-card.serif .sample { font-size: 56px; }

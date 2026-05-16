@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Le Belvédère · Centrente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="/" class="mono">CENTRENTE</a>
+  <div class="nav-links">
+    <a href="/#vision" data-i18n="nav_vision">Vision</a>
+    <a href="/#rooms" data-i18n="nav_rooms">Rooms</a>
+    <a href="/#stay" data-i18n="nav_stay">The Stay</a>
+    <a href="/le-13">Le 13</a>
+    <a href="/le-comptoir">Le Comptoir</a>
+    <a href="/le-belvedere">Le Belvédère</a>
+    <a href="/#club" data-i18n="nav_club">130 Club</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang lang-toggle">
+      <button class="opt on" data-lang="en">EN</button><span class="div">·</span><button class="opt" data-lang="fr">FR</button><span class="div">·</span><button class="opt" data-lang="vi">VI</button>
+    </div>
+    <a class="cta" href="/#reserve" data-i18n="nav_cta">Reservations</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/#vision" data-i18n="nav_vision">Vision</a>
+  <a href="/#rooms" data-i18n="nav_rooms">Rooms</a>
+  <a href="/#stay" data-i18n="nav_stay">The Stay</a>
+  <a href="/le-13">Le 13</a>
+  <a href="/le-comptoir">Le Comptoir</a>
+  <a href="/le-belvedere">Le Belvédère</a>
+  <a href="/#club" data-i18n="nav_club">130 Club</a>
+  <div class="lang lang-toggle" style="margin-top:32px;">
+    <button class="opt on" data-lang="en">EN</button><span class="div">·</span><button class="opt" data-lang="fr">FR</button><span class="div">·</span><button class="opt" data-lang="vi">VI</button>
+  </div>
+  <a href="/#reserve" class="cta" data-i18n="nav_cta" style="margin-top:8px;">Reservations</a>
+</div>
+<section id="belvedere">
+  <div class="venue-glyph">
+    <svg viewBox="0 0 60 60" stroke="#4F7A92" fill="none" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 6 22 Q 18 14 30 22 Q 42 30 54 22"/>
+      <path d="M 6 32 Q 18 24 30 32 Q 42 40 54 32" opacity="0.7"/>
+      <path d="M 6 42 Q 18 34 30 42 Q 42 50 54 42" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="anchor">
+    <div class="seal">Le Belvédère<small data-i18n="belv_caption">The Rooftop · Sky Bar · Infinity Pool</small></div>
+    <div class="head">
+      <h2 data-i18n-html="belv_h2">An infinity pool <em>above the city.</em></h2>
+      <p data-i18n="belv_p">Le Belvédère sits above floor 31 — the open roof of the house. An infinity pool that meets the Saigon skyline, a long sky bar, eight cabanas, an open table for late dinners. Private access from the 130 Pavilion; reservations open to guests of the house from dusk.</p>
+    </div>
+  </div>
+
+  <div class="belvedere-diagram">
+    <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" stroke="#ECECEFB3" fill="none" stroke-width="0.7">
+      <!-- rooftop floor plate -->
+      <rect x="40" y="40" width="380" height="240" stroke-width="1"/>
+
+      <!-- infinity pool (large, centered) -->
+      <rect x="120" y="80" width="220" height="80" stroke="#4F7A92" stroke-width="0.9"/>
+      <g stroke-width="0.3" opacity="0.5">
+        <line x1="130" y1="98" x2="330" y2="98"/>
+        <line x1="130" y1="112" x2="330" y2="112"/>
+        <line x1="130" y1="126" x2="330" y2="126"/>
+        <line x1="130" y1="140" x2="330" y2="140"/>
+      </g>
+      <!-- infinity edge marker (top edge of pool, where water meets sky) -->
+      <line x1="120" y1="80" x2="340" y2="80" stroke="#4F7A92" stroke-width="1.2"/>
+      <text x="230" y="74" font-family="Cormorant Garamond" font-style="italic" font-size="8" fill="#4F7A92" text-anchor="middle">↑ Infinity edge — to the city</text>
+      <text x="230" y="123" font-family="Cormorant Garamond" font-style="italic" font-size="13" fill="#ECECEFCC" text-anchor="middle">Infinity Pool</text>
+
+      <!-- sky bar — long counter, dining side -->
+      <rect x="120" y="200" width="220" height="20" stroke-width="0.85"/>
+      <line x1="120" y1="190" x2="340" y2="190" stroke-width="0.3" opacity="0.55"/>
+      <text x="230" y="214" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#ECECEFCC" text-anchor="middle">Sky Bar</text>
+      <!-- bar stools -->
+      <g fill="#ECECEFCC" opacity="0.5" stroke="none">
+        <circle cx="138" cy="234" r="3"/>
+        <circle cx="158" cy="234" r="3"/>
+        <circle cx="178" cy="234" r="3"/>
+        <circle cx="198" cy="234" r="3"/>
+        <circle cx="218" cy="234" r="3"/>
+        <circle cx="238" cy="234" r="3"/>
+        <circle cx="258" cy="234" r="3"/>
+        <circle cx="278" cy="234" r="3"/>
+        <circle cx="298" cy="234" r="3"/>
+        <circle cx="318" cy="234" r="3"/>
+      </g>
+
+      <!-- cabanas (lounge beds on left + right) -->
+      <g stroke-width="0.4" opacity="0.55">
+        <rect x="56" y="64" width="44" height="22"/>
+        <rect x="56" y="94" width="44" height="22"/>
+        <rect x="56" y="124" width="44" height="22"/>
+        <rect x="56" y="154" width="44" height="22"/>
+        <rect x="360" y="64" width="44" height="22"/>
+        <rect x="360" y="94" width="44" height="22"/>
+        <rect x="360" y="124" width="44" height="22"/>
+        <rect x="360" y="154" width="44" height="22"/>
+      </g>
+      <text x="78" y="58" font-family="Cormorant Garamond" font-style="italic" font-size="9" fill="#ECECEFCC" text-anchor="middle">Cabanas</text>
+      <text x="382" y="58" font-family="Cormorant Garamond" font-style="italic" font-size="9" fill="#ECECEFCC" text-anchor="middle">Cabanas</text>
+
+      <!-- open dining tables -->
+      <g stroke-width="0.4" opacity="0.55">
+        <circle cx="160" cy="258" r="10"/>
+        <circle cx="200" cy="258" r="10"/>
+        <circle cx="240" cy="258" r="10"/>
+        <circle cx="280" cy="258" r="10"/>
+        <circle cx="320" cy="258" r="10"/>
+      </g>
+      <text x="240" y="278" font-family="Cormorant Garamond" font-style="italic" font-size="9" fill="#ECECEFCC" text-anchor="middle">Open table — late dinners under the sky</text>
+
+      <!-- private Pavilion access marker -->
+      <path d="M 100 200 A 12 12 0 0 1 112 212" stroke="#4F7A92" stroke-width="0.6"/>
+      <text x="68" y="194" font-family="Cormorant Garamond" font-style="italic" font-size="8" fill="#ECECEFCC">Private from</text>
+      <text x="68" y="206" font-family="Cormorant Garamond" font-style="italic" font-size="8" fill="#ECECEFCC">130 Pavilion ↓</text>
+
+      <!-- compass / orientation -->
+      <g transform="translate(415, 60)">
+        <line x1="0" y1="0" x2="0" y2="-14" stroke="#ECECEF80" stroke-width="0.5"/>
+        <polygon points="0,-16 -2.5,-10 2.5,-10" fill="#ECECEF80"/>
+        <text x="0" y="-20" text-anchor="middle" font-family="Inter Tight" font-size="9" fill="#ECECEF80" letter-spacing="0.15em">N</text>
+      </g>
+
+      <!-- caption below -->
+      <text x="230" y="310" font-family="Cormorant Garamond" font-style="italic" font-size="13" fill="#ECECEFCC" text-anchor="middle">Le Belvédère — above floor 31 · 130 metres above Đồng Khởi</text>
+    </svg>
+  </div>
+
+  <div class="belvedere-footnote" data-i18n="belv_footnote">
+    Open from dusk to late, weather permitting. Reservations open to guests of the house.
+  </div>
+</section>
+
+<footer>
+  <div class="foot-mark">CENTRENTE</div>
+  <p class="foot-tag" data-i18n="foot_tag">Breaking ground March 2033. Đồng Khởi, District 1, Hồ Chí Minh City. Updates rare and considered.</p>
+  <div class="foot-cols">
+    <div>
+      <h4>The House</h4>
+      <a href="#">Vision</a><a href="#">District</a><a href="#">Rooms</a><a href="#">Rooftop</a>
+    </div>
+    <div>
+      <h4>The Programs</h4>
+      <a href="#">130 Club</a><a href="#">Table</a><a href="#">Arcade</a>
+    </div>
+    <div>
+      <h4>Reach</h4>
+      <a href="#">Press</a><a href="#">Contact</a><a href="#">Legal</a>
+    </div>
+  </div>
+  <div class="foot-currencies">
+    <span data-i18n="foot_currencies_label">Settlement, regulation permitting</span><span class="sep">·</span>Fiat<span class="sep">·</span><span class="zec">Zcash (ZEC)</span>
+  </div>
+  <div class="foot-base">
+    <div>© 2026 Centrente · All rights reserved</div>
+    <a href="https://trancent.io" class="trancent">
+      <span class="label" data-i18n="venture_by">A venture by</span>
+      <img src="trancent-logo-horizontal-white.png" alt="Trancent" />
+    </a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

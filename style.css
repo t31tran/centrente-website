@@ -460,6 +460,28 @@ footer {
   .stats { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ─── iPad / tablet — subpage compaction ─── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  section { padding: 100px 40px; }
+  .anchor { margin-bottom: 56px; }
+  .anchor .seal { font-size: 96px; }
+  .anchor .seal small { font-size: 10px; margin-top: 18px; }
+  .anchor .head { margin-top: 40px; max-width: 620px; }
+  .anchor .head h2 { font-size: clamp(36px, 5vw, 60px); }
+  .anchor .head p { font-size: 16px; line-height: 1.7; }
+  .venue-glyph { margin-bottom: 32px; }
+  .venue-glyph svg { width: 52px; height: 52px; }
+  .le13-diagram, .le21-diagram, .belvedere-diagram { margin-top: 40px; }
+  .le13-diagram svg, .le21-diagram svg, .belvedere-diagram svg { max-width: 540px; }
+  .le13-footnote, .le21-footnote, .belvedere-footnote { margin-top: 40px; font-size: 12px; }
+  .chef-bio, .cellar-bio { margin-top: 56px; padding-top: 36px; max-width: 580px; }
+  .chef-bio .glyph svg, .cellar-bio .glyph svg { width: 38px; height: 38px; }
+  .chef-bio .name, .cellar-bio .name { font-size: 36px; margin-bottom: 22px; }
+  .chef-bio .story, .cellar-bio .story { font-size: 15px; line-height: 1.7; }
+  .chef-bio .eyebrow, .cellar-bio .eyebrow { font-size: 10px; margin-bottom: 14px; }
+  .chef-bio .origin, .cellar-bio .origin { font-size: 10px; }
+}
+
 /* ─── mobile ─── */
 .nav-toggle {
   display: none;
@@ -698,4 +720,40 @@ footer {
   .story-prose { margin-top: 40px; }
   .story-prose p { font-size: 17px; line-height: 1.75; margin-bottom: 24px; text-align: left; }
   .story-prose p:last-child { font-size: 19px; margin-top: 36px; text-align: center; }
+}
+
+/* ─── info blocks (subpage content sections) ─── */
+.info-block {
+  margin: 64px auto 0; max-width: 680px;
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+  padding-top: 40px;
+}
+.info-block .eyebrow {
+  font-size: 11px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--ink-lift);
+  margin-bottom: 16px;
+}
+.info-block h3 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: 38px; line-height: 1.1; letter-spacing: -0.01em;
+  margin-bottom: 22px;
+}
+.info-block h3 em { font-style: italic; font-weight: 400; }
+.info-block p {
+  font-family: var(--serif); font-style: italic;
+  font-size: 17px; color: var(--ivory-70);
+  line-height: 1.78;
+  max-width: 56ch; margin: 0 auto;
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .info-block { margin-top: 48px; padding-top: 32px; max-width: 580px; }
+  .info-block h3 { font-size: 32px; }
+  .info-block p { font-size: 15px; line-height: 1.7; }
+}
+@media (max-width: 768px) {
+  .info-block { margin-top: 48px; padding-top: 32px; }
+  .info-block .eyebrow { font-size: 10px; margin-bottom: 12px; }
+  .info-block h3 { font-size: 26px; margin-bottom: 18px; }
+  .info-block p { font-size: 15px; line-height: 1.7; }
 }

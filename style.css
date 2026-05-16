@@ -607,9 +607,15 @@ footer {
   .sw .nm { font-size: 11px; }
   .sw .hex { font-size: 8px; letter-spacing: .08em; margin-top: 2px; }
 
-  .type-spec { grid-template-columns: 1fr; gap: 44px; margin-top: 44px; }
-  .ts-card.serif .sample { font-size: 56px; }
-  .ts-card.sans .sample { font-size: 17px; }
+  .type-spec { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; }
+  .ts-card { padding-top: 22px; }
+  .ts-card .label { font-size: 9px; }
+  .ts-card .name { font-size: 13px; margin-top: 6px; }
+  .ts-card .sample { margin-top: 22px !important; }
+  .ts-card.serif .sample { font-size: 42px !important; line-height: 1; }
+  .ts-card.serif .sample + .sample { font-size: 32px !important; margin-top: 10px !important; }
+  .ts-card.sans .sample { font-size: 14px !important; line-height: 1.55; }
+  .ts-card.sans .sample + .sample { font-size: 9px !important; margin-top: 18px !important; }
 
   footer { padding: 70px 24px 36px; }
   .foot-mark { font-size: 24px; }
